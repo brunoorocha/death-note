@@ -33,7 +33,6 @@
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="8pR-p2-Pbs" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="6a0-KT-Qtr"/>
                 <constraint firstItem="8pR-p2-Pbs" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="MyT-Fz-LGj"/>
