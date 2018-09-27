@@ -14,10 +14,11 @@ class NamesListViewController: UIViewController {
 	
 	var persons: [Person] = [
 		 Person(name: "Joãozim", deathType: .heartAttack, deathDay: Date.init(), deathHour: Date(timeInterval: 40.0, since: Date.init())),
-		 Person(name: "Pedim", deathType: .drowning, deathDay: Date.init(), deathHour: Date(timeInterval: 120.0, since: Date.init()))
+		 Person(name: "Pedim", deathType: .drowning, deathDay: Date.init(), deathHour: Date(timeInterval: 120.0, since: Date.init())),
+		Person(name: "Chiquim", deathType: .trampling, deathDay: Date(timeInterval: (3600.0 * 24.0), since: Date.init()), deathHour: Date(timeInterval: 120.0, since: Date.init()))
 	]
 	
-	var dates: [Date] = []
+	var dates: [String] = []
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -29,8 +30,14 @@ class NamesListViewController: UIViewController {
 		self.tableView.register(UINib(nibName: "DateTableViewHeaderView", bundle: nil), forHeaderFooterViewReuseIdentifier: "DateTableViewHeaderView")
 		
 		for person in persons {
-			self.dates.append(person.deathDay)
+			let date = getYearMonthAndDay(from: person.deathDay)
+			
+			if !self.dates.contains(date) {
+				self.dates.append(date)
+			}
 		}
+		
+		self.dates.sort()
 		
 	}
 	
@@ -38,10 +45,15 @@ class NamesListViewController: UIViewController {
 
 extension NamesListViewController: UITableViewDelegate, UITableViewDataSource {
 	
+	func numberOfSections(in tableView: UITableView) -> Int {
+		return self.dates.count
+	}
+	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		
 		let personsInDay = self.persons.filter { (person) -> Bool in
-			return person.deathDay == self.dates[section]
+			let date = getYearMonthAndDay(from: person.deathDay)
+			return date == self.dates[section]
 		}
 		
 		return personsInDay.count
@@ -59,7 +71,7 @@ extension NamesListViewController: UITableViewDelegate, UITableViewDataSource {
 		
 		if let header = self.tableView.dequeueReusableHeaderFooterView(withIdentifier: "DateTableViewHeaderView") as? DateTableViewHeaderView {
 		
-			header.dateLabel.text = getYearMonthAndDay(from: dates[0])
+			header.dateLabel.text = dates[section]
 			return header
 		}
 		
