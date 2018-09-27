@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BE22B8FB215CF31800B79A40 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE22B8FA215CF31800B79A40 /* AppDelegate.swift */; };
-		BE22B8FD215CF31800B79A40 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE22B8FC215CF31800B79A40 /* ViewController.swift */; };
+		BE22B8FD215CF31800B79A40 /* NamesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE22B8FC215CF31800B79A40 /* NamesListViewController.swift */; };
 		BE22B900215CF31800B79A40 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE22B8FE215CF31800B79A40 /* Main.storyboard */; };
 		BE22B902215CF31900B79A40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE22B901215CF31900B79A40 /* Assets.xcassets */; };
 		BE22B905215CF31900B79A40 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE22B903215CF31900B79A40 /* LaunchScreen.storyboard */; };
@@ -20,6 +20,11 @@
 		BE22B920215CF31900B79A40 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE22B91F215CF31900B79A40 /* ExtensionDelegate.swift */; };
 		BE22B922215CF31900B79A40 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE22B921215CF31900B79A40 /* NotificationController.swift */; };
 		BE22B924215CF31A00B79A40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE22B923215CF31A00B79A40 /* Assets.xcassets */; };
+		BE22B938215CF91D00B79A40 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE22B937215CF91D00B79A40 /* Person.swift */; };
+		BE22B93A215CF99800B79A40 /* DeathType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE22B939215CF99800B79A40 /* DeathType.swift */; };
+		BE22B93E215CFA5800B79A40 /* NamesListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE22B93C215CFA5800B79A40 /* NamesListTableViewCell.swift */; };
+		BE22B93F215CFA5800B79A40 /* NamesListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE22B93D215CFA5800B79A40 /* NamesListTableViewCell.xib */; };
+		BE22B943215D042800B79A40 /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE22B942215D042800B79A40 /* DateUtils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,7 +72,7 @@
 /* Begin PBXFileReference section */
 		BE22B8F7215CF31800B79A40 /* DeathNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeathNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE22B8FA215CF31800B79A40 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BE22B8FC215CF31800B79A40 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BE22B8FC215CF31800B79A40 /* NamesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamesListViewController.swift; sourceTree = "<group>"; };
 		BE22B8FF215CF31800B79A40 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BE22B901215CF31900B79A40 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BE22B904215CF31900B79A40 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -83,6 +88,11 @@
 		BE22B923215CF31A00B79A40 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BE22B925215CF31A00B79A40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE22B926215CF31A00B79A40 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		BE22B937215CF91D00B79A40 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		BE22B939215CF99800B79A40 /* DeathType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeathType.swift; sourceTree = "<group>"; };
+		BE22B93C215CFA5800B79A40 /* NamesListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamesListTableViewCell.swift; sourceTree = "<group>"; };
+		BE22B93D215CFA5800B79A40 /* NamesListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NamesListTableViewCell.xib; sourceTree = "<group>"; };
+		BE22B942215D042800B79A40 /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,11 +136,13 @@
 		BE22B8F9215CF31800B79A40 /* DeathNote */ = {
 			isa = PBXGroup;
 			children = (
+				BE22B941215D041300B79A40 /* utils */,
+				BE22B93B215CFA2500B79A40 /* view */,
+				BE22B936215CF90900B79A40 /* model */,
+				BE22B935215CF8EE00B79A40 /* controller */,
+				BE22B934215CF8DB00B79A40 /* storyboard */,
 				BE22B8FA215CF31800B79A40 /* AppDelegate.swift */,
-				BE22B8FC215CF31800B79A40 /* ViewController.swift */,
-				BE22B8FE215CF31800B79A40 /* Main.storyboard */,
 				BE22B901215CF31900B79A40 /* Assets.xcassets */,
-				BE22B903215CF31900B79A40 /* LaunchScreen.storyboard */,
 				BE22B906215CF31900B79A40 /* Info.plist */,
 			);
 			path = DeathNote;
@@ -157,6 +169,57 @@
 				BE22B926215CF31A00B79A40 /* PushNotificationPayload.apns */,
 			);
 			path = "DeathNote WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		BE22B934215CF8DB00B79A40 /* storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				BE22B8FE215CF31800B79A40 /* Main.storyboard */,
+				BE22B903215CF31900B79A40 /* LaunchScreen.storyboard */,
+			);
+			path = storyboard;
+			sourceTree = "<group>";
+		};
+		BE22B935215CF8EE00B79A40 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				BE22B8FC215CF31800B79A40 /* NamesListViewController.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		BE22B936215CF90900B79A40 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				BE22B937215CF91D00B79A40 /* Person.swift */,
+				BE22B939215CF99800B79A40 /* DeathType.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		BE22B93B215CFA2500B79A40 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				BE22B93C215CFA5800B79A40 /* NamesListTableViewCell.swift */,
+				BE22B940215CFA6100B79A40 /* xib */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		BE22B940215CFA6100B79A40 /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				BE22B93D215CFA5800B79A40 /* NamesListTableViewCell.xib */,
+			);
+			path = xib;
+			sourceTree = "<group>";
+		};
+		BE22B941215D041300B79A40 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				BE22B942215D042800B79A40 /* DateUtils.swift */,
+			);
+			path = utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,6 +326,7 @@
 			files = (
 				BE22B905215CF31900B79A40 /* LaunchScreen.storyboard in Resources */,
 				BE22B902215CF31900B79A40 /* Assets.xcassets in Resources */,
+				BE22B93F215CFA5800B79A40 /* NamesListTableViewCell.xib in Resources */,
 				BE22B900215CF31800B79A40 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -291,7 +355,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE22B8FD215CF31800B79A40 /* ViewController.swift in Sources */,
+				BE22B938215CF91D00B79A40 /* Person.swift in Sources */,
+				BE22B943215D042800B79A40 /* DateUtils.swift in Sources */,
+				BE22B8FD215CF31800B79A40 /* NamesListViewController.swift in Sources */,
+				BE22B93E215CFA5800B79A40 /* NamesListTableViewCell.swift in Sources */,
+				BE22B93A215CF99800B79A40 /* DeathType.swift in Sources */,
 				BE22B8FB215CF31800B79A40 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -550,7 +618,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JP3JNAQ57T;
+				DEVELOPMENT_TEAM = FG6BFSTBUF;
 				INFOPLIST_FILE = DeathNote/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -568,7 +636,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JP3JNAQ57T;
+				DEVELOPMENT_TEAM = FG6BFSTBUF;
 				INFOPLIST_FILE = DeathNote/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
