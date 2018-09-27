@@ -1,0 +1,626 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BE22B8FB215CF31800B79A40 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE22B8FA215CF31800B79A40 /* AppDelegate.swift */; };
+		BE22B8FD215CF31800B79A40 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE22B8FC215CF31800B79A40 /* ViewController.swift */; };
+		BE22B900215CF31800B79A40 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE22B8FE215CF31800B79A40 /* Main.storyboard */; };
+		BE22B902215CF31900B79A40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE22B901215CF31900B79A40 /* Assets.xcassets */; };
+		BE22B905215CF31900B79A40 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE22B903215CF31900B79A40 /* LaunchScreen.storyboard */; };
+		BE22B90A215CF31900B79A40 /* DeathNote WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = BE22B909215CF31900B79A40 /* DeathNote WatchKit App.app */; };
+		BE22B910215CF31900B79A40 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE22B90E215CF31900B79A40 /* Interface.storyboard */; };
+		BE22B912215CF31900B79A40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE22B911215CF31900B79A40 /* Assets.xcassets */; };
+		BE22B919215CF31900B79A40 /* DeathNote WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = BE22B918215CF31900B79A40 /* DeathNote WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		BE22B91E215CF31900B79A40 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE22B91D215CF31900B79A40 /* InterfaceController.swift */; };
+		BE22B920215CF31900B79A40 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE22B91F215CF31900B79A40 /* ExtensionDelegate.swift */; };
+		BE22B922215CF31900B79A40 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE22B921215CF31900B79A40 /* NotificationController.swift */; };
+		BE22B924215CF31A00B79A40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE22B923215CF31A00B79A40 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BE22B90B215CF31900B79A40 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BE22B8EF215CF31800B79A40 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BE22B908215CF31900B79A40;
+			remoteInfo = "DeathNote WatchKit App";
+		};
+		BE22B91A215CF31900B79A40 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BE22B8EF215CF31800B79A40 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BE22B917215CF31900B79A40;
+			remoteInfo = "DeathNote WatchKit Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		BE22B92C215CF31A00B79A40 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				BE22B919215CF31900B79A40 /* DeathNote WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE22B930215CF31A00B79A40 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				BE22B90A215CF31900B79A40 /* DeathNote WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		BE22B8F7215CF31800B79A40 /* DeathNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeathNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE22B8FA215CF31800B79A40 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BE22B8FC215CF31800B79A40 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BE22B8FF215CF31800B79A40 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BE22B901215CF31900B79A40 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BE22B904215CF31900B79A40 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BE22B906215CF31900B79A40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE22B909215CF31900B79A40 /* DeathNote WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DeathNote WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE22B90F215CF31900B79A40 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		BE22B911215CF31900B79A40 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BE22B913215CF31900B79A40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE22B918215CF31900B79A40 /* DeathNote WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "DeathNote WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE22B91D215CF31900B79A40 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		BE22B91F215CF31900B79A40 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		BE22B921215CF31900B79A40 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		BE22B923215CF31A00B79A40 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BE22B925215CF31A00B79A40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE22B926215CF31A00B79A40 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BE22B8F4215CF31800B79A40 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE22B915215CF31900B79A40 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BE22B8EE215CF31800B79A40 = {
+			isa = PBXGroup;
+			children = (
+				BE22B8F9215CF31800B79A40 /* DeathNote */,
+				BE22B90D215CF31900B79A40 /* DeathNote WatchKit App */,
+				BE22B91C215CF31900B79A40 /* DeathNote WatchKit Extension */,
+				BE22B8F8215CF31800B79A40 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BE22B8F8215CF31800B79A40 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BE22B8F7215CF31800B79A40 /* DeathNote.app */,
+				BE22B909215CF31900B79A40 /* DeathNote WatchKit App.app */,
+				BE22B918215CF31900B79A40 /* DeathNote WatchKit Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BE22B8F9215CF31800B79A40 /* DeathNote */ = {
+			isa = PBXGroup;
+			children = (
+				BE22B8FA215CF31800B79A40 /* AppDelegate.swift */,
+				BE22B8FC215CF31800B79A40 /* ViewController.swift */,
+				BE22B8FE215CF31800B79A40 /* Main.storyboard */,
+				BE22B901215CF31900B79A40 /* Assets.xcassets */,
+				BE22B903215CF31900B79A40 /* LaunchScreen.storyboard */,
+				BE22B906215CF31900B79A40 /* Info.plist */,
+			);
+			path = DeathNote;
+			sourceTree = "<group>";
+		};
+		BE22B90D215CF31900B79A40 /* DeathNote WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				BE22B90E215CF31900B79A40 /* Interface.storyboard */,
+				BE22B911215CF31900B79A40 /* Assets.xcassets */,
+				BE22B913215CF31900B79A40 /* Info.plist */,
+			);
+			path = "DeathNote WatchKit App";
+			sourceTree = "<group>";
+		};
+		BE22B91C215CF31900B79A40 /* DeathNote WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				BE22B91D215CF31900B79A40 /* InterfaceController.swift */,
+				BE22B91F215CF31900B79A40 /* ExtensionDelegate.swift */,
+				BE22B921215CF31900B79A40 /* NotificationController.swift */,
+				BE22B923215CF31A00B79A40 /* Assets.xcassets */,
+				BE22B925215CF31A00B79A40 /* Info.plist */,
+				BE22B926215CF31A00B79A40 /* PushNotificationPayload.apns */,
+			);
+			path = "DeathNote WatchKit Extension";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BE22B8F6215CF31800B79A40 /* DeathNote */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BE22B931215CF31A00B79A40 /* Build configuration list for PBXNativeTarget "DeathNote" */;
+			buildPhases = (
+				BE22B8F3215CF31800B79A40 /* Sources */,
+				BE22B8F4215CF31800B79A40 /* Frameworks */,
+				BE22B8F5215CF31800B79A40 /* Resources */,
+				BE22B930215CF31A00B79A40 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BE22B90C215CF31900B79A40 /* PBXTargetDependency */,
+			);
+			name = DeathNote;
+			productName = DeathNote;
+			productReference = BE22B8F7215CF31800B79A40 /* DeathNote.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BE22B908215CF31900B79A40 /* DeathNote WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BE22B92D215CF31A00B79A40 /* Build configuration list for PBXNativeTarget "DeathNote WatchKit App" */;
+			buildPhases = (
+				BE22B907215CF31900B79A40 /* Resources */,
+				BE22B92C215CF31A00B79A40 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BE22B91B215CF31900B79A40 /* PBXTargetDependency */,
+			);
+			name = "DeathNote WatchKit App";
+			productName = "DeathNote WatchKit App";
+			productReference = BE22B909215CF31900B79A40 /* DeathNote WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		BE22B917215CF31900B79A40 /* DeathNote WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BE22B929215CF31A00B79A40 /* Build configuration list for PBXNativeTarget "DeathNote WatchKit Extension" */;
+			buildPhases = (
+				BE22B914215CF31900B79A40 /* Sources */,
+				BE22B915215CF31900B79A40 /* Frameworks */,
+				BE22B916215CF31900B79A40 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "DeathNote WatchKit Extension";
+			productName = "DeathNote WatchKit Extension";
+			productReference = BE22B918215CF31900B79A40 /* DeathNote WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BE22B8EF215CF31800B79A40 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0940;
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = "Ada 2018";
+				TargetAttributes = {
+					BE22B8F6215CF31800B79A40 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+					BE22B908215CF31900B79A40 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+					BE22B917215CF31900B79A40 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+				};
+			};
+			buildConfigurationList = BE22B8F2215CF31800B79A40 /* Build configuration list for PBXProject "DeathNote" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BE22B8EE215CF31800B79A40;
+			productRefGroup = BE22B8F8215CF31800B79A40 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BE22B8F6215CF31800B79A40 /* DeathNote */,
+				BE22B908215CF31900B79A40 /* DeathNote WatchKit App */,
+				BE22B917215CF31900B79A40 /* DeathNote WatchKit Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BE22B8F5215CF31800B79A40 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE22B905215CF31900B79A40 /* LaunchScreen.storyboard in Resources */,
+				BE22B902215CF31900B79A40 /* Assets.xcassets in Resources */,
+				BE22B900215CF31800B79A40 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE22B907215CF31900B79A40 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE22B912215CF31900B79A40 /* Assets.xcassets in Resources */,
+				BE22B910215CF31900B79A40 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE22B916215CF31900B79A40 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE22B924215CF31A00B79A40 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BE22B8F3215CF31800B79A40 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE22B8FD215CF31800B79A40 /* ViewController.swift in Sources */,
+				BE22B8FB215CF31800B79A40 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE22B914215CF31900B79A40 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE22B922215CF31900B79A40 /* NotificationController.swift in Sources */,
+				BE22B920215CF31900B79A40 /* ExtensionDelegate.swift in Sources */,
+				BE22B91E215CF31900B79A40 /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BE22B90C215CF31900B79A40 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BE22B908215CF31900B79A40 /* DeathNote WatchKit App */;
+			targetProxy = BE22B90B215CF31900B79A40 /* PBXContainerItemProxy */;
+		};
+		BE22B91B215CF31900B79A40 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BE22B917215CF31900B79A40 /* DeathNote WatchKit Extension */;
+			targetProxy = BE22B91A215CF31900B79A40 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BE22B8FE215CF31800B79A40 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BE22B8FF215CF31800B79A40 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BE22B903215CF31900B79A40 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BE22B904215CF31900B79A40 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		BE22B90E215CF31900B79A40 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BE22B90F215CF31900B79A40 /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BE22B927215CF31A00B79A40 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BE22B928215CF31A00B79A40 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BE22B92A215CF31A00B79A40 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JP3JNAQ57T;
+				INFOPLIST_FILE = "DeathNote WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = AcademyIFCE.DeathNote.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.3;
+			};
+			name = Debug;
+		};
+		BE22B92B215CF31A00B79A40 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JP3JNAQ57T;
+				INFOPLIST_FILE = "DeathNote WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = AcademyIFCE.DeathNote.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.3;
+			};
+			name = Release;
+		};
+		BE22B92E215CF31A00B79A40 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JP3JNAQ57T;
+				IBSC_MODULE = DeathNote_WatchKit_Extension;
+				INFOPLIST_FILE = "DeathNote WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = AcademyIFCE.DeathNote.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.3;
+			};
+			name = Debug;
+		};
+		BE22B92F215CF31A00B79A40 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JP3JNAQ57T;
+				IBSC_MODULE = DeathNote_WatchKit_Extension;
+				INFOPLIST_FILE = "DeathNote WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = AcademyIFCE.DeathNote.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.3;
+			};
+			name = Release;
+		};
+		BE22B932215CF31A00B79A40 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JP3JNAQ57T;
+				INFOPLIST_FILE = DeathNote/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = AcademyIFCE.DeathNote;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BE22B933215CF31A00B79A40 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JP3JNAQ57T;
+				INFOPLIST_FILE = DeathNote/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = AcademyIFCE.DeathNote;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BE22B8F2215CF31800B79A40 /* Build configuration list for PBXProject "DeathNote" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE22B927215CF31A00B79A40 /* Debug */,
+				BE22B928215CF31A00B79A40 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BE22B929215CF31A00B79A40 /* Build configuration list for PBXNativeTarget "DeathNote WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE22B92A215CF31A00B79A40 /* Debug */,
+				BE22B92B215CF31A00B79A40 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BE22B92D215CF31A00B79A40 /* Build configuration list for PBXNativeTarget "DeathNote WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE22B92E215CF31A00B79A40 /* Debug */,
+				BE22B92F215CF31A00B79A40 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BE22B931215CF31A00B79A40 /* Build configuration list for PBXNativeTarget "DeathNote" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE22B932215CF31A00B79A40 /* Debug */,
+				BE22B933215CF31A00B79A40 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BE22B8EF215CF31800B79A40 /* Project object */;
+}
