@@ -82,10 +82,12 @@ extension NamesListViewController: UITableViewDelegate, UITableViewDataSource {
 		
 		if let cell = self.tableView.dequeueReusableCell(withIdentifier: "NamesListTableViewCell", for: indexPath) as? NamesListTableViewCell {
 			
-			cell.nameLabel.text = persons[indexPath.row].name
-			cell.deathHourLabel.text = getHoursMinutesAndSeconds(from: persons[indexPath.row].deathHour)
-			cell.deathTypeLabel.text = persons[indexPath.row].deathType.rawValue
-						
+			let index = indexPath.section > 0 ? indexPath.row + indexPath.section + 1 : indexPath.row + indexPath.section
+			
+			cell.nameLabel.text = persons[index].name
+			cell.deathHourLabel.text = getHoursMinutesAndSeconds(from: persons[index].deathHour)
+			cell.deathTypeLabel.text = persons[index].deathType.rawValue
+			
 			return cell
 		}
 		
