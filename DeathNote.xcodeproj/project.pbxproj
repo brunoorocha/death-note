@@ -25,6 +25,8 @@
 		BE22B93E215CFA5800B79A40 /* NamesListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE22B93C215CFA5800B79A40 /* NamesListTableViewCell.swift */; };
 		BE22B93F215CFA5800B79A40 /* NamesListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE22B93D215CFA5800B79A40 /* NamesListTableViewCell.xib */; };
 		BE22B943215D042800B79A40 /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE22B942215D042800B79A40 /* DateUtils.swift */; };
+		BE22B945215D101400B79A40 /* DateTableViewHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE22B944215D101400B79A40 /* DateTableViewHeaderView.swift */; };
+		BE22B947215D102800B79A40 /* DateTableViewHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE22B946215D102800B79A40 /* DateTableViewHeaderView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +95,8 @@
 		BE22B93C215CFA5800B79A40 /* NamesListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamesListTableViewCell.swift; sourceTree = "<group>"; };
 		BE22B93D215CFA5800B79A40 /* NamesListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NamesListTableViewCell.xib; sourceTree = "<group>"; };
 		BE22B942215D042800B79A40 /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
+		BE22B944215D101400B79A40 /* DateTableViewHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTableViewHeaderView.swift; sourceTree = "<group>"; };
+		BE22B946215D102800B79A40 /* DateTableViewHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DateTableViewHeaderView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				BE22B93C215CFA5800B79A40 /* NamesListTableViewCell.swift */,
+				BE22B944215D101400B79A40 /* DateTableViewHeaderView.swift */,
 				BE22B940215CFA6100B79A40 /* xib */,
 			);
 			path = view;
@@ -210,6 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				BE22B93D215CFA5800B79A40 /* NamesListTableViewCell.xib */,
+				BE22B946215D102800B79A40 /* DateTableViewHeaderView.xib */,
 			);
 			path = xib;
 			sourceTree = "<group>";
@@ -325,6 +331,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE22B905215CF31900B79A40 /* LaunchScreen.storyboard in Resources */,
+				BE22B947215D102800B79A40 /* DateTableViewHeaderView.xib in Resources */,
 				BE22B902215CF31900B79A40 /* Assets.xcassets in Resources */,
 				BE22B93F215CFA5800B79A40 /* NamesListTableViewCell.xib in Resources */,
 				BE22B900215CF31800B79A40 /* Main.storyboard in Resources */,
@@ -355,6 +362,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE22B945215D101400B79A40 /* DateTableViewHeaderView.swift in Sources */,
 				BE22B938215CF91D00B79A40 /* Person.swift in Sources */,
 				BE22B943215D042800B79A40 /* DateUtils.swift in Sources */,
 				BE22B8FD215CF31800B79A40 /* NamesListViewController.swift in Sources */,

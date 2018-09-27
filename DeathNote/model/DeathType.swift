@@ -8,9 +8,9 @@
 
 import Foundation
 
-enum DeathType {
-	case heartAttack
-	case drowning
-	case trampling
+enum DeathType: String {
+	case heartAttack = "Heart Attack"
+	case drowning = "Drowning"
+	case trampling = "Trampling"
 	// ...
 }
