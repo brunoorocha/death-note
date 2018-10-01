@@ -10,7 +10,8 @@ import UIKit
 
 class NamesListViewController: UIViewController {
 
-	@IBOutlet weak var tableView: UITableView!	
+	@IBOutlet weak var tableView: UITableView!
+    
 	
 	var persons: [Person] = [
 		 Person(name: "Joãozim", deathType: .heartAttack, deathDay: Date.init(), deathHour: Date(timeInterval: 40.0, since: Date.init())),
@@ -19,18 +20,25 @@ class NamesListViewController: UIViewController {
 	]
 	
 	var dates: [String] = []
+    
+    let textColor = AppColors.currentTheme.colors.textColor
+    let background = AppColors.currentTheme.colors.backgroundColor
+    let primaryColor = AppColors.currentTheme.colors.primaryColor
+    
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
 		self.tableView.delegate = self
 		self.tableView.dataSource = self
+        
+        tableView.backgroundColor = background
 		
 		self.tableView.register(UINib(nibName: "NamesListTableViewCell", bundle: nil), forCellReuseIdentifier: "NamesListTableViewCell")
 		self.tableView.register(UINib(nibName: "DateTableViewHeaderView", bundle: nil), forHeaderFooterViewReuseIdentifier: "DateTableViewHeaderView")
 		
 		for person in persons {
-			let date = getYearMonthAndDay(from: person.deathDay)
+			let date = formatterToLongStyle(with: person.deathDay)
 			
 			if !self.dates.contains(date) {
 				self.dates.append(date)
@@ -38,7 +46,12 @@ class NamesListViewController: UIViewController {
 		}
 		
 		self.dates.sort()
-		
+        
+        self.view.backgroundColor = background
+        
+        
+        navigationController?.navigationBar.tintColor = primaryColor
+        navigationController?.navigationBar.barTintColor = background
 	}
 	
 }
@@ -52,7 +65,7 @@ extension NamesListViewController: UITableViewDelegate, UITableViewDataSource {
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		
 		let personsInDay = self.persons.filter { (person) -> Bool in
-			let date = getYearMonthAndDay(from: person.deathDay)
+			let date = formatterToLongStyle(with: person.deathDay)
 			return date == self.dates[section]
 		}
 		
@@ -70,7 +83,7 @@ extension NamesListViewController: UITableViewDelegate, UITableViewDataSource {
 	func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
 		
 		if let header = self.tableView.dequeueReusableHeaderFooterView(withIdentifier: "DateTableViewHeaderView") as? DateTableViewHeaderView {
-		
+            
 			header.dateLabel.text = dates[section]
 			return header
 		}
@@ -85,8 +98,8 @@ extension NamesListViewController: UITableViewDelegate, UITableViewDataSource {
 			let index = indexPath.section > 0 ? indexPath.row + indexPath.section + 1 : indexPath.row + indexPath.section
 			
 			cell.nameLabel.text = persons[index].name
-			cell.deathHourLabel.text = getHoursMinutesAndSeconds(from: persons[index].deathHour)
-			cell.deathTypeLabel.text = persons[index].deathType.rawValue
+			cell.deathHourLabel.text = getHoursMinutesAndSeconds(from: persons[index].deathHour)			
+            cell.selectionStyle = .none
 			
 			return cell
 		}

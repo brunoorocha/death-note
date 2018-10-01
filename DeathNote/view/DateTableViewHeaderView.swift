@@ -11,5 +11,12 @@ import UIKit
 class DateTableViewHeaderView: UITableViewHeaderFooterView {
 	
 	@IBOutlet weak var dateLabel: UILabel!
-	
+    @IBOutlet weak var viewBackground: UIView!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        viewBackground.backgroundColor = AppColors.currentTheme.colors.backgroundColor
+        dateLabel.textColor = AppColors.currentTheme.colors.textColor
+    }
 }

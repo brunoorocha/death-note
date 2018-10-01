@@ -22,3 +22,10 @@ private func formatter(with format: String) -> DateFormatter {
 	
 	return formatter
 }
+
+func formatterToLongStyle(with date: Date) -> String {
+    let formatter = DateFormatter()
+    formatter.dateStyle = .long
+    
+    return formatter.string(from: date)
+}
