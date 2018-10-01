@@ -28,6 +28,8 @@
 		BE22B945215D101400B79A40 /* DateTableViewHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE22B944215D101400B79A40 /* DateTableViewHeaderView.swift */; };
 		BE22B947215D102800B79A40 /* DateTableViewHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE22B946215D102800B79A40 /* DateTableViewHeaderView.xib */; };
 		BE4B8438215D239D00DD2AA9 /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4B8437215D239D00DD2AA9 /* AppTheme.swift */; };
+		BEC952E0216246ED001CBC5C /* AddNameModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC952DF216246ED001CBC5C /* AddNameModalViewController.swift */; };
+		BEC952E2216261B1001CBC5C /* AddPersonDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC952E1216261B1001CBC5C /* AddPersonDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +101,8 @@
 		BE22B944215D101400B79A40 /* DateTableViewHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTableViewHeaderView.swift; sourceTree = "<group>"; };
 		BE22B946215D102800B79A40 /* DateTableViewHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DateTableViewHeaderView.xib; sourceTree = "<group>"; };
 		BE4B8437215D239D00DD2AA9 /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
+		BEC952DF216246ED001CBC5C /* AddNameModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNameModalViewController.swift; sourceTree = "<group>"; };
+		BEC952E1216261B1001CBC5C /* AddPersonDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPersonDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				BE22B8FC215CF31800B79A40 /* NamesListViewController.swift */,
+				BEC952DF216246ED001CBC5C /* AddNameModalViewController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -227,6 +232,7 @@
 			children = (
 				BE22B942215D042800B79A40 /* DateUtils.swift */,
 				BE4B8437215D239D00DD2AA9 /* AppTheme.swift */,
+				BEC952E1216261B1001CBC5C /* AddPersonDelegate.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -372,6 +378,8 @@
 				BE22B93E215CFA5800B79A40 /* NamesListTableViewCell.swift in Sources */,
 				BE4B8438215D239D00DD2AA9 /* AppTheme.swift in Sources */,
 				BE22B93A215CF99800B79A40 /* DeathType.swift in Sources */,
+				BEC952E2216261B1001CBC5C /* AddPersonDelegate.swift in Sources */,
+				BEC952E0216246ED001CBC5C /* AddNameModalViewController.swift in Sources */,
 				BE22B8FB215CF31800B79A40 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

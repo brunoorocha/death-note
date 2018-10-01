@@ -16,6 +16,10 @@ func getYearMonthAndDay(from date: Date) -> String {
 	return formatter(with: "yyyy/MM/dd").string(from: date)
 }
 
+func getDateAndTime(from date: Date) -> String {
+	return formatter(with: "MM/dd/yyyy HH:mm:ss").string(from: date)
+}
+
 private func formatter(with format: String) -> DateFormatter {
 	let formatter = DateFormatter()
 	formatter.dateFormat = format

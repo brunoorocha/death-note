@@ -7,3 +7,7 @@
 //
 
 import Foundation
+
+protocol AddPersonDelegate {
+	func addPersonWith(name: String, deathType: DeathType, deathDate: Date)
+}
