@@ -24,7 +24,6 @@ class NamesListTableViewCell: UITableViewCell {
         deathHourLabel.textColor = textColor
         nameLabel.textColor = textColor
         
-        viewName.backgroundColor = backgroundColor
         contentView.backgroundColor = backgroundColor
     }
 
