@@ -32,10 +32,10 @@
                         </constraints>
                     </imageView>
                     <view contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="Vmr-9N-f4h">
-                        <rect key="frame" x="80" y="8" width="153" height="47.5"/>
+                        <rect key="frame" x="80" y="8" width="153" height="45"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vkK-Im-m0D">
-                                <rect key="frame" x="0.0" y="14" width="153" height="20"/>
+                                <rect key="frame" x="0.0" y="12.5" width="153" height="20"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -49,15 +49,23 @@
                             <constraint firstItem="vkK-Im-m0D" firstAttribute="leading" secondItem="Vmr-9N-f4h" secondAttribute="leading" id="hUa-qT-Xvz"/>
                         </constraints>
                     </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yow-bM-kEl">
+                        <rect key="frame" x="13" y="57" width="308" height="3"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
                 </subviews>
                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
                     <constraint firstItem="vU3-dY-gx1" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="15x-Y8-G01"/>
                     <constraint firstAttribute="trailing" secondItem="Ve3-9N-Hwf" secondAttribute="trailing" constant="16" id="1MM-VK-XTR"/>
+                    <constraint firstItem="Yow-bM-kEl" firstAttribute="top" secondItem="vU3-dY-gx1" secondAttribute="bottom" constant="1.5" id="1rU-XL-9J5"/>
                     <constraint firstItem="Vmr-9N-f4h" firstAttribute="leading" secondItem="vU3-dY-gx1" secondAttribute="trailing" constant="16" id="82X-IQ-dvJ"/>
                     <constraint firstAttribute="bottom" secondItem="vU3-dY-gx1" secondAttribute="bottom" constant="8" id="8rT-B8-vwq"/>
+                    <constraint firstItem="Yow-bM-kEl" firstAttribute="top" secondItem="Vmr-9N-f4h" secondAttribute="bottom" constant="4" id="Hx5-EI-hdJ"/>
+                    <constraint firstItem="Yow-bM-kEl" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="13" id="Lxv-MZ-gSS"/>
+                    <constraint firstAttribute="bottom" secondItem="Yow-bM-kEl" secondAttribute="bottom" constant="3.5" id="OQA-bY-Ksv"/>
                     <constraint firstItem="vU3-dY-gx1" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="VG3-Yk-u8Y"/>
-                    <constraint firstAttribute="bottom" secondItem="Vmr-9N-f4h" secondAttribute="bottom" constant="8" id="ZPJ-6o-dmR"/>
+                    <constraint firstAttribute="trailing" secondItem="Yow-bM-kEl" secondAttribute="trailing" constant="14" id="ZDq-jv-Ueq"/>
                     <constraint firstItem="Vmr-9N-f4h" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="qbP-GB-Puk"/>
                     <constraint firstItem="Ve3-9N-Hwf" firstAttribute="leading" secondItem="Vmr-9N-f4h" secondAttribute="trailing" constant="15" id="r6j-X3-XUd"/>
                     <constraint firstItem="Ve3-9N-Hwf" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="xwP-Fd-dp6"/>
@@ -68,6 +76,7 @@
                 <outlet property="deathHourLabel" destination="Ve3-9N-Hwf" id="SSH-E6-wuX"/>
                 <outlet property="deathTypeImage" destination="vU3-dY-gx1" id="OnH-ju-cud"/>
                 <outlet property="nameLabel" destination="vkK-Im-m0D" id="wcZ-Gh-r6n"/>
+                <outlet property="viewName" destination="Vmr-9N-f4h" id="vKP-7t-mYf"/>
             </connections>
             <point key="canvasLocation" x="44" y="49.475262368815599"/>
         </tableViewCell>
