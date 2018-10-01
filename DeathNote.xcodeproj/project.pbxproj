@@ -27,6 +27,7 @@
 		BE22B943215D042800B79A40 /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE22B942215D042800B79A40 /* DateUtils.swift */; };
 		BE22B945215D101400B79A40 /* DateTableViewHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE22B944215D101400B79A40 /* DateTableViewHeaderView.swift */; };
 		BE22B947215D102800B79A40 /* DateTableViewHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE22B946215D102800B79A40 /* DateTableViewHeaderView.xib */; };
+		BE4B8438215D239D00DD2AA9 /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4B8437215D239D00DD2AA9 /* AppTheme.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +98,7 @@
 		BE22B942215D042800B79A40 /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
 		BE22B944215D101400B79A40 /* DateTableViewHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTableViewHeaderView.swift; sourceTree = "<group>"; };
 		BE22B946215D102800B79A40 /* DateTableViewHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DateTableViewHeaderView.xib; sourceTree = "<group>"; };
+		BE4B8437215D239D00DD2AA9 /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,6 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				BE22B942215D042800B79A40 /* DateUtils.swift */,
+				BE4B8437215D239D00DD2AA9 /* AppTheme.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -367,6 +370,7 @@
 				BE22B943215D042800B79A40 /* DateUtils.swift in Sources */,
 				BE22B8FD215CF31800B79A40 /* NamesListViewController.swift in Sources */,
 				BE22B93E215CFA5800B79A40 /* NamesListTableViewCell.swift in Sources */,
+				BE4B8438215D239D00DD2AA9 /* AppTheme.swift in Sources */,
 				BE22B93A215CF99800B79A40 /* DeathType.swift in Sources */,
 				BE22B8FB215CF31800B79A40 /* AppDelegate.swift in Sources */,
 			);
@@ -626,7 +630,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = FG6BFSTBUF;
+				DEVELOPMENT_TEAM = H3RQC49HYF;
 				INFOPLIST_FILE = DeathNote/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -644,7 +648,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = FG6BFSTBUF;
+				DEVELOPMENT_TEAM = H3RQC49HYF;
 				INFOPLIST_FILE = DeathNote/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
