@@ -84,7 +84,6 @@ extension NamesListViewController: UITableViewDelegate, UITableViewDataSource {
 			
 			cell.nameLabel.text = persons[indexPath.row].name
 			cell.deathHourLabel.text = getHoursMinutesAndSeconds(from: persons[indexPath.row].deathHour)
-			cell.deathTypeLabel.text = persons[indexPath.row].deathType.rawValue
 						
 			return cell
 		}

@@ -12,11 +12,10 @@ class NamesListTableViewCell: UITableViewCell {
 
 	@IBOutlet weak var deathTypeImage: UIImageView!
 	@IBOutlet weak var nameLabel: UILabel!
-	@IBOutlet weak var deathTypeLabel: UILabel!
 	@IBOutlet weak var deathHourLabel: UILabel!
 	
 	override func awakeFromNib() {
-        super.awakeFromNib()        
+        super.awakeFromNib()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
