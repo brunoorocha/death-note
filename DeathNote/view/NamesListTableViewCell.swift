@@ -25,6 +25,7 @@ class NamesListTableViewCell: UITableViewCell {
         nameLabel.textColor = textColor
         
         contentView.backgroundColor = backgroundColor
+
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

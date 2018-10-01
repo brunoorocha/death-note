@@ -20,6 +20,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="H5x-ld-YvG">
                                 <rect key="frame" x="40" y="0.0" width="335" height="551"/>
+
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
@@ -35,7 +36,7 @@
                     <navigationItem key="navigationItem" title="Dear Ryuky, " id="72F-JL-yoO">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="sJT-Zz-u1D">
                             <connections>
-                                <segue destination="FVz-nD-BDW" kind="presentation" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="LvU-gi-27F"/>
+                                <segue destination="FVz-nD-BDW" kind="presentation" identifier="AddNameModal" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="LvU-gi-27F"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -47,77 +48,121 @@
             </objects>
             <point key="canvasLocation" x="762" y="-564"/>
         </scene>
-        <!--View Controller-->
+
+        <!--Add Name Modal View Controller-->
         <scene sceneID="nSL-qo-KFs">
             <objects>
-                <viewController id="FVz-nD-BDW" sceneMemberID="viewController">
+                <viewController id="FVz-nD-BDW" customClass="AddNameModalViewController" customModule="DeathNote" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dGg-v5-k0I">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cfT-hv-vtO">
+
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cfT-hv-vtO">
                                 <rect key="frame" x="0.0" y="112" width="375" height="555"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jN8-NJ-5bG">
+                                    <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jN8-NJ-5bG">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <items>
                                             <navigationItem title="Human" id="3FY-kE-Wnq">
-                                                <barButtonItem key="leftBarButtonItem" title="Cancel" id="BrR-Yf-ov7"/>
-                                                <barButtonItem key="rightBarButtonItem" title="Save" id="lAB-zu-6sv"/>
+                                                <barButtonItem key="leftBarButtonItem" title="Cancel" id="BrR-Yf-ov7">
+                                                    <connections>
+                                                        <action selector="didTapOnCancelButton:" destination="FVz-nD-BDW" id="8Yt-b6-PXd"/>
+                                                    </connections>
+                                                </barButtonItem>
+                                                <barButtonItem key="rightBarButtonItem" title="Save" id="lAB-zu-6sv">
+                                                    <connections>
+                                                        <action selector="didTapOnSaveButton:" destination="FVz-nD-BDW" id="g5u-qh-FyV"/>
+                                                    </connections>
+                                                </barButtonItem>
                                             </navigationItem>
                                         </items>
                                     </navigationBar>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aPX-Jh-KHx">
-                                        <rect key="frame" x="34" y="73" width="45" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aPX-Jh-KHx">
+                                        <rect key="frame" x="16" y="76" width="343" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1ra-C0-1oz">
-                                        <rect key="frame" x="34" y="102" width="306" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1ra-C0-1oz">
+                                        <rect key="frame" x="16" y="105" width="343" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Death Issue" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NKI-wE-fLY">
-                                        <rect key="frame" x="34" y="164" width="91" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Death Issue" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NKI-wE-fLY">
+                                        <rect key="frame" x="16" y="167" width="343" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UAB-CE-IQD">
-                                        <rect key="frame" x="34" y="193" width="306" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UAB-CE-IQD">
+                                        <rect key="frame" x="16" y="196" width="343" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time of death" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fpv-81-bAx">
-                                        <rect key="frame" x="34" y="250" width="106" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time of death" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fpv-81-bAx">
+                                        <rect key="frame" x="16" y="258" width="343" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uBk-tU-LR1">
-                                        <rect key="frame" x="34" y="279" width="306" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uBk-tU-LR1">
+                                        <rect key="frame" x="16" y="287" width="343" height="30"/>
+
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="1ra-C0-1oz" secondAttribute="trailing" constant="16" id="15M-xu-fe8"/>
+                                    <constraint firstAttribute="trailing" secondItem="aPX-Jh-KHx" secondAttribute="trailing" constant="16" id="52K-9l-rEz"/>
+                                    <constraint firstItem="1ra-C0-1oz" firstAttribute="leading" secondItem="cfT-hv-vtO" secondAttribute="leading" constant="16" id="7jZ-il-AuC"/>
+                                    <constraint firstAttribute="trailing" secondItem="jN8-NJ-5bG" secondAttribute="trailing" id="FBB-pu-myU"/>
+                                    <constraint firstItem="aPX-Jh-KHx" firstAttribute="top" secondItem="jN8-NJ-5bG" secondAttribute="bottom" constant="32" id="FVF-Cf-sZx"/>
+                                    <constraint firstItem="fpv-81-bAx" firstAttribute="top" secondItem="UAB-CE-IQD" secondAttribute="bottom" constant="32" id="GSd-MD-Ofo"/>
+                                    <constraint firstAttribute="trailing" secondItem="UAB-CE-IQD" secondAttribute="trailing" constant="16" id="H8g-1K-fIL"/>
+                                    <constraint firstItem="uBk-tU-LR1" firstAttribute="top" secondItem="fpv-81-bAx" secondAttribute="bottom" constant="8" id="ILb-ew-JvM"/>
+                                    <constraint firstItem="jN8-NJ-5bG" firstAttribute="leading" secondItem="cfT-hv-vtO" secondAttribute="leading" id="Un0-1N-UlI"/>
+                                    <constraint firstItem="UAB-CE-IQD" firstAttribute="leading" secondItem="cfT-hv-vtO" secondAttribute="leading" constant="16" id="W0U-T6-0wp"/>
+                                    <constraint firstItem="jN8-NJ-5bG" firstAttribute="top" secondItem="cfT-hv-vtO" secondAttribute="top" id="Za9-zf-EO4"/>
+                                    <constraint firstItem="1ra-C0-1oz" firstAttribute="top" secondItem="aPX-Jh-KHx" secondAttribute="bottom" constant="8" id="aP6-sB-kKY"/>
+                                    <constraint firstAttribute="trailing" secondItem="fpv-81-bAx" secondAttribute="trailing" constant="16" id="dGY-1b-IKO"/>
+                                    <constraint firstItem="NKI-wE-fLY" firstAttribute="top" secondItem="1ra-C0-1oz" secondAttribute="bottom" constant="32" id="eec-ke-irk"/>
+                                    <constraint firstItem="uBk-tU-LR1" firstAttribute="leading" secondItem="cfT-hv-vtO" secondAttribute="leading" constant="16" id="fXw-Hf-AQ1"/>
+                                    <constraint firstAttribute="trailing" secondItem="NKI-wE-fLY" secondAttribute="trailing" constant="16" id="iBC-Gq-IRj"/>
+                                    <constraint firstItem="fpv-81-bAx" firstAttribute="leading" secondItem="cfT-hv-vtO" secondAttribute="leading" constant="16" id="pRP-M2-38d"/>
+                                    <constraint firstAttribute="trailing" secondItem="uBk-tU-LR1" secondAttribute="trailing" constant="16" id="v6J-Zk-pU0"/>
+                                    <constraint firstItem="aPX-Jh-KHx" firstAttribute="leading" secondItem="cfT-hv-vtO" secondAttribute="leading" constant="16" id="vNx-aH-mCq"/>
+                                    <constraint firstItem="NKI-wE-fLY" firstAttribute="leading" secondItem="cfT-hv-vtO" secondAttribute="leading" constant="16" id="vcZ-qj-sA9"/>
+                                    <constraint firstItem="UAB-CE-IQD" firstAttribute="top" secondItem="NKI-wE-fLY" secondAttribute="bottom" constant="8" id="zuB-Xg-1XC"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.22319448929999999" green="0.22319448929999999" blue="0.22319448929999999" alpha="0.20261665239726026" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="cfT-hv-vtO" firstAttribute="leading" secondItem="AuS-3y-3Df" secondAttribute="leading" id="2MC-ai-6JL"/>
+                            <constraint firstItem="cfT-hv-vtO" firstAttribute="bottom" secondItem="AuS-3y-3Df" secondAttribute="bottom" id="Hvh-6F-Jhg"/>
+                            <constraint firstItem="cfT-hv-vtO" firstAttribute="top" secondItem="AuS-3y-3Df" secondAttribute="top" constant="92" id="TGQ-E0-arB"/>
+                            <constraint firstItem="cfT-hv-vtO" firstAttribute="trailing" secondItem="AuS-3y-3Df" secondAttribute="trailing" id="mZA-na-17S"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="AuS-3y-3Df"/>
                     </view>
+                    <connections>
+                        <outlet property="deathIssueTextField" destination="UAB-CE-IQD" id="MEd-9P-J2y"/>
+                        <outlet property="nameTextField" destination="1ra-C0-1oz" id="T4p-As-jsG"/>
+                        <outlet property="timeOfDeathTextField" destination="uBk-tU-LR1" id="uFW-nS-cWT"/>
+                    </connections>
+
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gy3-Xu-Tzw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -128,7 +173,9 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cEu-75-i8J" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" translucent="NO" largeTitles="YES" id="gWc-ue-8du">
+
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="gWc-ue-8du">
+
                         <rect key="frame" x="0.0" y="20" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">

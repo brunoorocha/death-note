@@ -19,8 +19,10 @@
                 <rect key="frame" x="0.0" y="0.0" width="335" height="63.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" text="00:00:00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ve3-9N-Hwf">
                         <rect key="frame" x="247.5" y="21.5" width="71.5" height="21"/>
+
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -31,6 +33,7 @@
                             <constraint firstAttribute="width" constant="48" id="dT7-FE-rdg"/>
                         </constraints>
                     </imageView>
+
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yow-bM-kEl">
                         <rect key="frame" x="13" y="59" width="308" height="1"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -59,6 +62,7 @@
                     <constraint firstItem="vkK-Im-m0D" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="nt6-CK-feD"/>
                     <constraint firstAttribute="bottom" secondItem="Yow-bM-kEl" secondAttribute="bottom" constant="3.5" id="srn-4L-ZVp"/>
                     <constraint firstItem="Ve3-9N-Hwf" firstAttribute="leading" secondItem="vkK-Im-m0D" secondAttribute="trailing" constant="16" id="uoN-24-Yg4"/>
+
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
