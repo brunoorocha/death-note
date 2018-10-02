@@ -35,6 +35,7 @@
 		BE4B8438215D239D00DD2AA9 /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4B8437215D239D00DD2AA9 /* AppTheme.swift */; };
 		BEC952E0216246ED001CBC5C /* AddNameModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC952DF216246ED001CBC5C /* AddNameModalViewController.swift */; };
 		BEC952E2216261B1001CBC5C /* AddPersonDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC952E1216261B1001CBC5C /* AddPersonDelegate.swift */; };
+
 		BEC952E521638B10001CBC5C /* ModalPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC952E421638B10001CBC5C /* ModalPresentationController.swift */; };
 /* End PBXBuildFile section */
 
@@ -113,6 +114,8 @@
 		BEC952DF216246ED001CBC5C /* AddNameModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNameModalViewController.swift; sourceTree = "<group>"; };
 		BEC952E1216261B1001CBC5C /* AddPersonDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPersonDelegate.swift; sourceTree = "<group>"; };
 		BEC952E421638B10001CBC5C /* ModalPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalPresentationController.swift; sourceTree = "<group>"; };
+		BEC952E62163EC3D001CBC5C /* DeathNote WatchKit App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "DeathNote WatchKit App.entitlements"; sourceTree = "<group>"; };
+		BEC952E72163F1F1001CBC5C /* DeathNote.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DeathNote.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				BEC952E32162B4E8001CBC5C /* transition */,
+				BEC952E72163F1F1001CBC5C /* DeathNote.entitlements */,
 				BE22B941215D041300B79A40 /* utils */,
 				BE22B93B215CFA2500B79A40 /* view */,
 				BE22B936215CF90900B79A40 /* model */,
@@ -172,6 +176,7 @@
 		BE22B90D215CF31900B79A40 /* DeathNote WatchKit App */ = {
 			isa = PBXGroup;
 			children = (
+				BEC952E62163EC3D001CBC5C /* DeathNote WatchKit App.entitlements */,
 				BE22B90E215CF31900B79A40 /* Interface.storyboard */,
 				BE22B911215CF31900B79A40 /* Assets.xcassets */,
 				BE22B913215CF31900B79A40 /* Info.plist */,
@@ -327,12 +332,30 @@
 				TargetAttributes = {
 					BE22B8F6215CF31800B79A40 = {
 						CreatedOnToolsVersion = 9.4.1;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
+						};
 					};
 					BE22B908215CF31900B79A40 = {
 						CreatedOnToolsVersion = 9.4.1;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					BE22B917215CF31900B79A40 = {
 						CreatedOnToolsVersion = 9.4.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes.watchos.extension = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -628,6 +651,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "DeathNote WatchKit App/DeathNote WatchKit App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JP3JNAQ57T;
 				IBSC_MODULE = DeathNote_WatchKit_Extension;
@@ -647,6 +671,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "DeathNote WatchKit App/DeathNote WatchKit App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JP3JNAQ57T;
 				IBSC_MODULE = DeathNote_WatchKit_Extension;
@@ -665,8 +690,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = DeathNote/DeathNote.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = H3RQC49HYF;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = DeathNote/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -683,8 +709,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = DeathNote/DeathNote.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = H3RQC49HYF;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = DeathNote/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

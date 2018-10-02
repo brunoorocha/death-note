@@ -9,6 +9,7 @@
 import WatchKit
 import Foundation
 import WatchConnectivity
+import UserNotifications
 
 class NamesListInterfaceController: WKInterfaceController, WCSessionDelegate {
 	@IBOutlet var namesListTable: WKInterfaceTable!
@@ -28,6 +29,8 @@ class NamesListInterfaceController: WKInterfaceController, WCSessionDelegate {
 			WCSession.default.delegate = self
 			WCSession.default.activate()
 		}
+		
+		UNUserNotificationCenter.current().delegate = self
     }
 	
 	override func didAppear() {
@@ -67,3 +70,23 @@ class NamesListInterfaceController: WKInterfaceController, WCSessionDelegate {
 	
 	func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {}
 }
+
+extension NamesListInterfaceController: UNUserNotificationCenterDelegate {
+	func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+		
+		self.presentController(withName: "ProgressInterfaceController", context: notification.request.content.body)
+	}
+	
+	func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+		
+		if response.notification.request.content.categoryIdentifier == "SEE" {
+			if response.actionIdentifier == "SEE_ACTION" {
+				self.presentController(withName: "ProgressInterfaceController", context: self)
+			}
+		}
+		
+		
+	}
+}
+
+

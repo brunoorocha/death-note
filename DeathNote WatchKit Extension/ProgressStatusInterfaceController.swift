@@ -19,13 +19,14 @@ class ProgressStatusInterfaceController: WKInterfaceController {
 		if let nameLabel = context as? String {
 			self.nameLabel.setText(nameLabel)
 		}
-		
-		self.circleProgressBarImage.setImageNamed("fourth_seconds_circle_progress_status_")
-		self.circleProgressBarImage.startAnimatingWithImages(in: NSRange(location: 0, length: 42), duration: 42, repeatCount: 1)
     }
 
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
+		
+		self.circleProgressBarImage.setImageNamed("fourth_seconds_circle_progress_status_")
+		self.circleProgressBarImage.startAnimatingWithImages(in: NSRange(location: 0, length: 42), duration: 42, repeatCount: 1)
+		
         super.willActivate()
     }
 
