@@ -28,10 +28,11 @@ class NamesListViewController: UIViewController, WCSessionDelegate {
 	var persons: [Person] = [
 		 Person(name: "Joãozim", deathType: .heartAttack, deathDay: Date.init(), deathHour: Date(timeInterval: 40.0, since: Date.init())),
 		 Person(name: "Pedim", deathType: .drowning, deathDay: Date.init(), deathHour: Date(timeInterval: 120.0, since: Date.init())),
-		Person(name: "Chiquim", deathType: .trampling, deathDay: Date(timeInterval: (3600.0 * 24.0), since: Date.init()), deathHour: Date(timeInterval: 120.0, since: Date.init()))
+		 Person(name: "Chiquim", deathType: .trampling, deathDay: Date(timeInterval: (3600.0 * 24.0), since: Date.init()), deathHour: Date(timeInterval: 120.0, since: Date.init())), Person(name: "Joãozim", deathType: .heartAttack, deathDay: Date.init(), deathHour: Date(timeInterval: 40.0, since: Date.init())),
+		 Person(name: "Pedim", deathType: .drowning, deathDay: Date.init(), deathHour: Date(timeInterval: 120.0, since: Date.init()))
 	]
 	
-	var people = [(String,String)]()
+	var people = [String]()
 	
 	
 	var dates: [String] = []
@@ -45,7 +46,7 @@ class NamesListViewController: UIViewController, WCSessionDelegate {
 		}
 		
 		for i in 0..<persons.count {
-			people.append((persons[i].name, persons[i].deathType.rawValue))
+			people.append(persons[i].name)
 		}
 
 		self.tableView.delegate = self
@@ -69,7 +70,8 @@ class NamesListViewController: UIViewController, WCSessionDelegate {
 	
 	func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
 		if let boolean = message["teste"] as? Bool, boolean {
-			replyHandler(["persons":people])
+			let replyMessage = people
+			replyHandler(["persons":replyMessage, "success": true])
 		}
 	}
 	

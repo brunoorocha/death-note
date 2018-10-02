@@ -14,6 +14,14 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="NamesListInterfaceController" customModule="DeathNote_WatchKit_Extension">
                     <items>
+                        <group width="136" height="28" alignment="left" id="XA5-1K-U6R">
+                            <items>
+                                <label width="96" height="24" alignment="left" text="Today" id="1HG-fl-T6T">
+                                    <fontDescription key="font" type="system" weight="semibold" pointSize="20"/>
+                                </label>
+                                <imageView width="24" height="24" alignment="right" id="KCO-tO-H9H"/>
+                            </items>
+                        </group>
                         <table alignment="center" id="tGz-QE-7Or">
                             <items>
                                 <tableRow identifier="NameListTableRow" id="rx4-6I-1Q6" customClass="RowController" customModule="DeathNote_WatchKit_Extension">
@@ -34,6 +42,7 @@
                     </items>
                     <connections>
                         <outlet property="namesListTable" destination="tGz-QE-7Or" id="FoO-FK-x77"/>
+                        <outlet property="testImage" destination="KCO-tO-H9H" id="yU1-Pd-INl"/>
                     </connections>
                 </controller>
             </objects>

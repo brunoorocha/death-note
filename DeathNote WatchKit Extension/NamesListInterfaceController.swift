@@ -15,6 +15,7 @@ class NamesListInterfaceController: WKInterfaceController, WCSessionDelegate {
 	}
 	
 	@IBOutlet var namesListTable: WKInterfaceTable!
+	@IBOutlet var testImage: WKInterfaceImage!
 	
 	let dictionary = ["teste" : true]
 	var values = [String]()
@@ -22,7 +23,7 @@ class NamesListInterfaceController: WKInterfaceController, WCSessionDelegate {
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         // Configure interface objects here.
-		self.namesListTable.setNumberOfRows(self.dictionary.count, withRowType: "NameListTableRow")
+		self.testImage.setImage(#imageLiteral(resourceName: "fourth_seconds_circle_progress_status_0"))
 		
 		if WCSession.isSupported() {
 			WCSession.default.delegate = self
@@ -34,11 +35,12 @@ class NamesListInterfaceController: WKInterfaceController, WCSessionDelegate {
 		WCSession.default.sendMessage(dictionary, replyHandler: { (reply) in
 			let success = reply["success"] as! Bool
 			if success == true {
-				if let people = reply["persons"] as? [Person]{
-					self.values = people.map { $0.name }
-					for (index,person) in people.enumerated() {
+				if let people = reply["persons"] as? [String] {
+					self.values = people
+					self.namesListTable.setNumberOfRows(self.values.count, withRowType: "NameListTableRow")
+					for index in 0..<people.count {
 						let row = self.namesListTable.rowController(at: index) as? RowController
-						let labelValue = person.name
+						let labelValue = people[index]
 						DispatchQueue.main.async {
 							row?.nameLabel.setText(labelValue)
 						}
@@ -58,6 +60,6 @@ class NamesListInterfaceController: WKInterfaceController, WCSessionDelegate {
     }
 	
 	override func contextForSegue(withIdentifier segueIdentifier: String, in table: WKInterfaceTable, rowIndex: Int) -> Any? {
-		return self.values.count
+		return self.values[rowIndex]
 	}
 }
