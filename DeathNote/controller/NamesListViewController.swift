@@ -39,10 +39,12 @@ class NamesListViewController: UIViewController {
 		self.tableView.register(UINib(nibName: "NamesListTableViewCell", bundle: nil), forCellReuseIdentifier: "NamesListTableViewCell")
 		self.tableView.register(UINib(nibName: "DateTableViewHeaderView", bundle: nil), forHeaderFooterViewReuseIdentifier: "DateTableViewHeaderView")
 		
-
+        
+        
 		self.view.backgroundColor = background
         navigationController?.navigationBar.tintColor = primaryColor
         navigationController?.navigationBar.barTintColor = background
+        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedStringKey.font: UIFont(name: "Futura", size: 24)!]
 
 		loadTableData()
 	}

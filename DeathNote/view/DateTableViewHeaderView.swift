@@ -18,5 +18,8 @@ class DateTableViewHeaderView: UITableViewHeaderFooterView {
         
         viewBackground.backgroundColor = AppColors.currentTheme.colors.backgroundColor
         dateLabel.textColor = AppColors.currentTheme.colors.textColor
+        
     }
+    
+    
 }

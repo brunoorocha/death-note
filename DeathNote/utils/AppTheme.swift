@@ -20,7 +20,7 @@ struct Colors {
     
     // GRAY
     static let grayModal = #colorLiteral(red: 0.1490196078, green: 0.1490196078, blue: 0.1490196078, alpha: 1)
-    static let grayBackground = #colorLiteral(red: 0.1098039216, green: 0.1098039216, blue: 0.1098039216, alpha: 1)
+    static let grayBackground = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
     static let grayBackgroundCardNotification = #colorLiteral(red: 0.9490196078, green: 0.9568627451, blue: 1, alpha: 0.1376819349)
     
     // WHITE
