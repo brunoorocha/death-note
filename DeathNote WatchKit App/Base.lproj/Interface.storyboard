@@ -14,12 +14,12 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="NamesListInterfaceController" customModule="DeathNote_WatchKit_Extension">
                     <items>
-                        <group width="136" height="28" alignment="left" id="XA5-1K-U6R">
+                        <group width="136" height="32" alignment="left" id="XA5-1K-U6R">
                             <items>
-                                <label width="96" height="24" alignment="left" text="Today" id="1HG-fl-T6T">
-                                    <fontDescription key="font" type="system" weight="semibold" pointSize="20"/>
+                                <label width="96" height="24" alignment="left" verticalAlignment="center" text="Date" id="1HG-fl-T6T">
+                                    <fontDescription key="font" type="system" weight="semibold" pointSize="24"/>
                                 </label>
-                                <imageView width="24" height="24" alignment="right" id="KCO-tO-H9H"/>
+                                <imageView width="24" height="28" alignment="right" verticalAlignment="center" id="KCO-tO-H9H"/>
                             </items>
                         </group>
                         <table alignment="center" id="tGz-QE-7Or">
@@ -34,19 +34,47 @@
                                     </group>
                                     <connections>
                                         <outlet property="nameLabel" destination="DX1-xL-44b" id="hLJ-IW-C53"/>
-                                        <segue destination="eai-9Z-xeF" kind="push" identifier="NameListToProgressStatus" id="CZz-oB-4ms"/>
+                                        <segue destination="sCc-OR-YUk" kind="push" identifier="NamesListToDetails" id="0gR-Op-EI4"/>
                                     </connections>
                                 </tableRow>
                             </items>
                         </table>
                     </items>
                     <connections>
+                        <outlet property="iconDeathImage" destination="KCO-tO-H9H" id="b9y-Iq-rKJ"/>
                         <outlet property="namesListTable" destination="tGz-QE-7Or" id="FoO-FK-x77"/>
-                        <outlet property="testImage" destination="KCO-tO-H9H" id="yU1-Pd-INl"/>
+                        <outlet property="todayNameLabel" destination="1HG-fl-T6T" id="JYg-fm-cDH"/>
                     </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="220" y="345"/>
+        </scene>
+        <!--Details Interface Controller-->
+        <scene sceneID="U7g-YB-3tf">
+            <objects>
+                <controller id="sCc-OR-YUk" customClass="DetailsInterfaceController" customModule="DeathNote_WatchKit_Extension">
+                    <items>
+                        <label width="134" height="24" alignment="left" text="Name" id="Qv5-4V-WKe">
+                            <color key="textColor" red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="font" type="system" weight="semibold" pointSize="16"/>
+                        </label>
+                        <label width="134" height="24" alignment="left" text="Death Type" id="zxy-yc-hpC">
+                            <color key="textColor" red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="font" type="system" weight="semibold" pointSize="16"/>
+                        </label>
+                        <label width="134" height="24" alignment="left" text="Death Time" id="bkw-BE-EIA">
+                            <color key="textColor" red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="font" type="system" weight="semibold" pointSize="16"/>
+                        </label>
+                    </items>
+                    <connections>
+                        <outlet property="deathTimeLabel" destination="bkw-BE-EIA" id="qfM-G2-yjz"/>
+                        <outlet property="deathTypeLabel" destination="zxy-yc-hpC" id="wZt-SY-4yF"/>
+                        <outlet property="nameLabel" destination="Qv5-4V-WKe" id="8zk-dX-R7H"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="468" y="345"/>
         </scene>
         <!--Progress Status Interface Controller-->
         <scene sceneID="nxN-HR-dyx">
@@ -64,7 +92,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="468" y="345"/>
+            <point key="canvasLocation" x="712" y="345"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">

@@ -1,27 +1,27 @@
 //
-//  ProgressStatusInterfaceController.swift
+//  DetailsInterfaceController.swift
 //  DeathNote WatchKit Extension
 //
-//  Created by Ada 2018 on 01/10/2018.
+//  Created by Ada 2018 on 02/10/2018.
 //  Copyright © 2018 Ada 2018. All rights reserved.
 //
 
 import WatchKit
 import Foundation
 
-class ProgressStatusInterfaceController: WKInterfaceController {
+class DetailsInterfaceController: WKInterfaceController {
 	@IBOutlet var nameLabel: WKInterfaceLabel!
-	@IBOutlet var circleProgressBarImage: WKInterfaceImage!
+	@IBOutlet var deathTypeLabel: WKInterfaceLabel!
+	@IBOutlet var deathTimeLabel: WKInterfaceLabel!
 	
 	override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         // Configure interface objects here.
-		if let nameLabel = context as? String {
-			self.nameLabel.setText(nameLabel)
+		if let object = context as? [String: String] {
+			self.nameLabel.setText(object["name"])
+			self.deathTypeLabel.setText(object["death_type"])
+			self.deathTimeLabel.setText(object["death_day"])
 		}
-		
-		self.circleProgressBarImage.setImageNamed("fourth_seconds_circle_progress_status_")
-		self.circleProgressBarImage.startAnimatingWithImages(in: NSRange(location: 0, length: 42), duration: 42, repeatCount: 1)
     }
 
     override func willActivate() {

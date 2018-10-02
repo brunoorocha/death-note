@@ -29,7 +29,6 @@ class AddNameModalViewController: UIViewController {
 		return toolbar
 	}()
 
-	
 	var deathIssues = [DeathType.heartAttack, DeathType.drowning, DeathType.trampling]
 	var dateSelected: Date?
 	
@@ -66,7 +65,6 @@ class AddNameModalViewController: UIViewController {
 	}
 	
 	@IBAction func didTapOnSaveButton(_ sender: UIBarButtonItem) {
-		
 		let name = self.nameTextField.text
 		let deathType = DeathType.init(rawValue: self.deathIssueTextField.text!)
 		let deathDate = self.dateSelected
@@ -103,4 +101,3 @@ extension AddNameModalViewController: UIPickerViewDelegate, UIPickerViewDataSour
 		self.deathIssueTextField.text = self.deathIssues[row].rawValue
 	}
 }
-

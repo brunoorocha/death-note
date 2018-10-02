@@ -9,11 +9,8 @@
 import UIKit
 
 class NamesListTableViewCell: UITableViewCell {
-
-	@IBOutlet weak var deathTypeImage: UIImageView!
 	@IBOutlet weak var nameLabel: UILabel!
 	@IBOutlet weak var deathHourLabel: UILabel!
-    @IBOutlet weak var viewName: UIView!
     
 	override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,7 +22,6 @@ class NamesListTableViewCell: UITableViewCell {
         nameLabel.textColor = textColor
         
         contentView.backgroundColor = backgroundColor
-
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

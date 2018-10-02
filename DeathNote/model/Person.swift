@@ -14,4 +14,3 @@ struct Person {
 	var deathDay: Date
 	var deathHour: Date
 }
-

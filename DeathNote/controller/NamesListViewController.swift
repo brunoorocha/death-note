@@ -10,30 +10,24 @@ import UIKit
 import WatchConnectivity
 
 class NamesListViewController: UIViewController, WCSessionDelegate {
-	func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {}
-	
-	func sessionDidBecomeInactive(_ session: WCSession) {}
-	
-	func sessionDidDeactivate(_ session: WCSession) {}
 	
 	@IBOutlet weak var tableView: UITableView!
 	
 	var persons: [Person] = [
-		 Person(name: "Joãozim", deathType: .heartAttack, deathDay: Date.init(), deathHour: Date(timeInterval: 40.0, since: Date.init())),
-		 Person(name: "Pedim", deathType: .drowning, deathDay: Date.init(), deathHour: Date(timeInterval: 120.0, since: Date.init())),
-		 Person(name: "Chiquim", deathType: .trampling, deathDay: Date(timeInterval: (3600.0 * 24.0), since: Date.init()), deathHour: Date(timeInterval: 120.0, since: Date.init())), Person(name: "Joãozim", deathType: .heartAttack, deathDay: Date.init(), deathHour: Date(timeInterval: 40.0, since: Date.init())),
-		 Person(name: "Pedim", deathType: .drowning, deathDay: Date.init(), deathHour: Date(timeInterval: 120.0, since: Date.init()))
+		Person(name: "Yagami", deathType: .heartAttack, deathDay: Date.init(), deathHour: Date(timeInterval: 40.0, since: Date.init())),
+		Person(name: "Amane", deathType: .trampling, deathDay: Date.init(), deathHour: Date(timeInterval: 90.0, since: Date.init())),
+		Person(name: "Lawliet", deathType: .drowning, deathDay: Date.init(), deathHour: Date(timeInterval: 120.0, since: Date.init()))
 	]
 	
 	var tableData: [String: [Person]] = [:]
-	var people = [String]()
+	var people = [[String:String]]()
 	
 	var dates: [String] = []
-    
+	
     let textColor = AppColors.currentTheme.colors.textColor
     let background = AppColors.currentTheme.colors.backgroundColor
     let primaryColor = AppColors.currentTheme.colors.primaryColor
-    
+	
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -43,13 +37,11 @@ class NamesListViewController: UIViewController, WCSessionDelegate {
 			WCSession.default.activate()
 		}
 		
-		for i in 0..<persons.count {
-			people.append(persons[i].name)
-		}
-
+		appendPeople()
+		
 		self.tableView.delegate = self
 		self.tableView.dataSource = self
-        
+		
         tableView.backgroundColor = background
 		
 		self.tableView.register(UINib(nibName: "NamesListTableViewCell", bundle: nil), forCellReuseIdentifier: "NamesListTableViewCell")
@@ -70,7 +62,6 @@ class NamesListViewController: UIViewController, WCSessionDelegate {
 				self.dates.append(date)
 			}
 		}
-		
 		self.dates.sort()
 		
 		for date in self.dates {
@@ -78,10 +69,26 @@ class NamesListViewController: UIViewController, WCSessionDelegate {
 				return date == formatterToLongStyle(with: person.deathDay)
 			})
 		}
-		
 		self.tableView.reloadData()
 	}
 	
+	func appendPeople() {
+		self.people.removeAll()
+		
+		let todayDate = formatterToLongStyle(with: Date.init())
+		let peopleToDie = self.persons.filter({ (person) -> Bool in
+			return formatterToLongStyle(with: person.deathDay) == todayDate
+		})
+		
+		for i in 0..<peopleToDie.count {
+			var p: [String:String] = [:]
+			p["name"] = peopleToDie[i].name
+			p["death_type"] = peopleToDie[i].deathType.rawValue
+			p["death_day"] = getHoursMinutesAndSeconds(from: peopleToDie[i].deathDay)
+			
+			self.people.append(p)
+		}
+	}
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if segue.identifier == "AddNameModal" {
@@ -96,6 +103,12 @@ class NamesListViewController: UIViewController, WCSessionDelegate {
 			replyHandler(["persons":replyMessage, "success": true])
 		}
 	}
+	
+	func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {}
+	
+	func sessionDidBecomeInactive(_ session: WCSession) {}
+	
+	func sessionDidDeactivate(_ session: WCSession) {}
 }
 
 extension NamesListViewController: AddPersonDelegate {
@@ -106,14 +119,13 @@ extension NamesListViewController: AddPersonDelegate {
 		self.persons.sort { (person1, person2) -> Bool in
 			return person1.deathDay < person2.deathDay
 		}
-		
 		self.loadTableData()
+		
+		appendPeople()
 	}
 }
-	
 
 extension NamesListViewController: UITableViewDelegate, UITableViewDataSource {
-	
 	func numberOfSections(in tableView: UITableView) -> Int {
 		return self.tableData.keys.count
 	}
@@ -129,7 +141,7 @@ extension NamesListViewController: UITableViewDelegate, UITableViewDataSource {
 	}
 		
 	func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-		return 48.0
+		return 64.0
 	}
 	
 	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -137,9 +149,7 @@ extension NamesListViewController: UITableViewDelegate, UITableViewDataSource {
 	}
 	
 	func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-		
 		if let header = self.tableView.dequeueReusableHeaderFooterView(withIdentifier: "DateTableViewHeaderView") as? DateTableViewHeaderView {
-		
 			header.dateLabel.text = self.dates[section]
 			return header
 		}
@@ -148,7 +158,6 @@ extension NamesListViewController: UITableViewDelegate, UITableViewDataSource {
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		
 		if let cell = self.tableView.dequeueReusableCell(withIdentifier: "NamesListTableViewCell", for: indexPath) as? NamesListTableViewCell {
 			
 //			let index = indexPath.section > 0 ? indexPath.row + tableView.numberOfRows(inSection: (indexPath.section - 1)) : indexPath.row + indexPath.section
@@ -156,6 +165,7 @@ extension NamesListViewController: UITableViewDelegate, UITableViewDataSource {
 //			print("Section: \(indexPath.section), item: \(indexPath.item), index: \(index)")
 			
 			let date = self.dates[indexPath.section]
+			
 			guard let persons = self.tableData[date] else {
 				return UITableViewCell()
 			}
@@ -166,7 +176,6 @@ extension NamesListViewController: UITableViewDelegate, UITableViewDataSource {
 			
 			return cell
 		}
-		
 		return UITableViewCell()
 	}
 }

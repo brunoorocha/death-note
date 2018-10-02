@@ -9,7 +9,6 @@
 import UIKit
 
 class DateTableViewHeaderView: UITableViewHeaderFooterView {
-	
 	@IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var viewBackground: UIView!
     
