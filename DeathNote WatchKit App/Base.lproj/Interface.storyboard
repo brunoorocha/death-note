@@ -48,10 +48,10 @@
             </objects>
             <point key="canvasLocation" x="220" y="345"/>
         </scene>
-        <!--Progress Status Interface Controller-->
+        <!--ProgressInterfaceController-->
         <scene sceneID="nxN-HR-dyx">
             <objects>
-                <controller id="eai-9Z-xeF" customClass="ProgressStatusInterfaceController" customModule="DeathNote_WatchKit_Extension">
+                <controller identifier="ProgressInterfaceController" id="eai-9Z-xeF" customClass="ProgressStatusInterfaceController" customModule="DeathNote_WatchKit_Extension">
                     <items>
                         <imageView height="127" alignment="left" id="ZI1-yU-g7U"/>
                         <label alignment="center" verticalAlignment="bottom" text="Name" id="wbm-fP-E3O">
@@ -76,18 +76,18 @@
                     <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
                     <connections>
                         <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
-                        <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
+                        <segue destination="scS-q6-UEf" kind="relationship" relationship="dynamicNotificationInterface" id="Sgx-qF-2QK"/>
                     </connections>
                 </notificationController>
             </objects>
             <point key="canvasLocation" x="220" y="643"/>
         </scene>
-        <!--Notification Controller-->
-        <scene sceneID="ZPc-GJ-vnh">
+        <!--Dynamic Notification Interface Controller-->
+        <scene sceneID="rD1-Io-0lA">
             <objects>
-                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="DeathNote_WatchKit_App" customModuleProvider="target"/>
+                <controller id="scS-q6-UEf"/>
             </objects>
-            <point key="canvasLocation" x="468" y="643"/>
+            <point key="canvasLocation" x="520" y="643"/>
         </scene>
     </scenes>
 </document>

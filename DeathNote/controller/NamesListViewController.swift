@@ -8,6 +8,7 @@
 
 import UIKit
 import WatchConnectivity
+import UserNotifications
 
 class NamesListViewController: UIViewController, WCSessionDelegate {
 	func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {}
@@ -33,7 +34,6 @@ class NamesListViewController: UIViewController, WCSessionDelegate {
     let textColor = AppColors.currentTheme.colors.textColor
     let background = AppColors.currentTheme.colors.backgroundColor
     let primaryColor = AppColors.currentTheme.colors.primaryColor
-    
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -59,7 +59,7 @@ class NamesListViewController: UIViewController, WCSessionDelegate {
         navigationController?.navigationBar.tintColor = primaryColor
         navigationController?.navigationBar.barTintColor = background
 
-		loadTableData()
+		loadTableData()		
 	}
 	
 	func loadTableData() {
@@ -107,10 +107,35 @@ extension NamesListViewController: AddPersonDelegate {
 			return person1.deathDay < person2.deathDay
 		}
 		
+		self.performToSendNotification(with: newPerson)
 		self.loadTableData()
 	}
-}
 	
+	func performToSendNotification(with person: Person) {
+		
+		let notificationAction = UNNotificationAction(identifier: "SEE_ACTION", title: "See countdown", options: UNNotificationActionOptions(rawValue: 0))
+		let notificationCategory = UNNotificationCategory(identifier: "SEE", actions: [notificationAction], intentIdentifiers: [], options: .customDismissAction)
+		
+		
+		let notificationContent = UNMutableNotificationContent()
+		notificationContent.title = "Death Alert"
+		notificationContent.body = "\(person.name)"		
+		notificationContent.sound = UNNotificationSound.default()
+		notificationContent.categoryIdentifier = "SEE"
+		
+		let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: false)
+		let request = UNNotificationRequest(identifier: "DeathNoteNotification", content: notificationContent, trigger: trigger)
+		
+		UNUserNotificationCenter.current().setNotificationCategories([notificationCategory])
+		
+		UNUserNotificationCenter.current().add(request) { (error) in
+			if error != nil {
+				print(String(describing: error))
+			}
+		}
+	}
+}
+
 
 extension NamesListViewController: UITableViewDelegate, UITableViewDataSource {
 	
@@ -150,10 +175,6 @@ extension NamesListViewController: UITableViewDelegate, UITableViewDataSource {
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		
 		if let cell = self.tableView.dequeueReusableCell(withIdentifier: "NamesListTableViewCell", for: indexPath) as? NamesListTableViewCell {
-			
-//			let index = indexPath.section > 0 ? indexPath.row + tableView.numberOfRows(inSection: (indexPath.section - 1)) : indexPath.row + indexPath.section
-			
-//			print("Section: \(indexPath.section), item: \(indexPath.item), index: \(index)")
 			
 			let date = self.dates[indexPath.section]
 			guard let persons = self.tableData[date] else {
