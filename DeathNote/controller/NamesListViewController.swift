@@ -7,8 +7,21 @@
 //
 
 import UIKit
+import WatchConnectivity
 
-class NamesListViewController: UIViewController {
+class NamesListViewController: UIViewController, WCSessionDelegate {
+	func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+		
+	}
+	
+	func sessionDidBecomeInactive(_ session: WCSession) {
+		
+	}
+	
+	func sessionDidDeactivate(_ session: WCSession) {
+		
+	}
+	
 
 	@IBOutlet weak var tableView: UITableView!	
 	
@@ -18,11 +31,23 @@ class NamesListViewController: UIViewController {
 		Person(name: "Chiquim", deathType: .trampling, deathDay: Date(timeInterval: (3600.0 * 24.0), since: Date.init()), deathHour: Date(timeInterval: 120.0, since: Date.init()))
 	]
 	
+	var people = [(String,String)]()
+	
+	
 	var dates: [String] = []
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
+		if WCSession.isSupported() {
+			WCSession.default.delegate = self
+			WCSession.default.activate()
+		}
+		
+		for i in 0..<persons.count {
+			people.append((persons[i].name, persons[i].deathType.rawValue))
+		}
+
 		self.tableView.delegate = self
 		self.tableView.dataSource = self
 		
@@ -30,6 +55,7 @@ class NamesListViewController: UIViewController {
 		self.tableView.register(UINib(nibName: "DateTableViewHeaderView", bundle: nil), forHeaderFooterViewReuseIdentifier: "DateTableViewHeaderView")
 		
 		for person in persons {
+
 			let date = getYearMonthAndDay(from: person.deathDay)
 			
 			if !self.dates.contains(date) {
@@ -39,6 +65,12 @@ class NamesListViewController: UIViewController {
 		
 		self.dates.sort()
 		
+	}
+	
+	func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
+		if let boolean = message["teste"] as? Bool, boolean {
+			replyHandler(["persons":people])
+		}
 	}
 	
 }
