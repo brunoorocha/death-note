@@ -13,6 +13,11 @@ class AddNameModalViewController: UIViewController {
 	@IBOutlet weak var nameTextField: UITextField!
 	@IBOutlet weak var deathIssueTextField: UITextField!
 	@IBOutlet weak var timeOfDeathTextField: UITextField!
+	@IBOutlet weak var navigationBar: UINavigationBar!
+	@IBOutlet weak var modalView: UIView!
+	@IBOutlet weak var cancelButton: UIBarButtonItem!
+	@IBOutlet weak var saveButton: UIBarButtonItem!
+	
 	
 	var delegate: AddPersonDelegate?
 	
@@ -58,6 +63,12 @@ class AddNameModalViewController: UIViewController {
 		self.deathIssueTextField.text = deathIssues[0].rawValue
 		self.timeOfDeathTextField.text = getDateAndTime(from: deathDatePicker.date)
 		self.dateSelected = deathDatePicker.date
+		
+		self.navigationBar.barTintColor = AppColors.currentTheme.colors.backgroundColor
+		self.navigationBar.tintColor = AppColors.currentTheme.colors.textColor
+		self.cancelButton.tintColor = AppColors.currentTheme.colors.textColor
+		self.saveButton.tintColor = AppColors.currentTheme.colors.primaryColor
+		
     }
 
 	@IBAction func didTapOnCancelButton(_ sender: UIBarButtonItem) {

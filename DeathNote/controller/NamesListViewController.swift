@@ -13,6 +13,10 @@ class NamesListViewController: UIViewController, WCSessionDelegate {
 	
 	@IBOutlet weak var tableView: UITableView!
 	
+	override var preferredStatusBarStyle: UIStatusBarStyle {
+		return .lightContent
+	}
+	
 	var persons: [Person] = [
 		Person(name: "Yagami", deathType: .heartAttack, deathDay: Date.init(), deathHour: Date(timeInterval: 40.0, since: Date.init())),
 		Person(name: "Amane", deathType: .trampling, deathDay: Date.init(), deathHour: Date(timeInterval: 90.0, since: Date.init())),
@@ -24,6 +28,8 @@ class NamesListViewController: UIViewController, WCSessionDelegate {
 	
 	var dates: [String] = []
 	
+	var addNameModalViewController: AddNameModalViewController?
+
     let textColor = AppColors.currentTheme.colors.textColor
     let background = AppColors.currentTheme.colors.backgroundColor
     let primaryColor = AppColors.currentTheme.colors.primaryColor
@@ -52,6 +58,7 @@ class NamesListViewController: UIViewController, WCSessionDelegate {
         navigationController?.navigationBar.barTintColor = background
 
 		loadTableData()
+		startDeathChecking()
 	}
 	
 	func loadTableData() {
@@ -92,8 +99,20 @@ class NamesListViewController: UIViewController, WCSessionDelegate {
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if segue.identifier == "AddNameModal" {
-			let addNameModal = segue.destination as! AddNameModalViewController
-			addNameModal.delegate = self
+			self.addNameModalViewController = segue.destination as? AddNameModalViewController
+			self.addNameModalViewController?.delegate = self
+			self.addNameModalViewController?.transitioningDelegate = self
+			self.addNameModalViewController?.modalPresentationStyle = .custom
+		}
+	}
+	
+	func startDeathChecking() {
+		Timer.scheduledTimer(withTimeInterval: 10, repeats: true) { (timer) in
+			let nextHumansToDie = self.persons.filter({ (person) -> Bool in
+				return Date(timeInterval: 40, since: Date.init()) >= person.deathDay
+			})
+			
+			print(nextHumansToDie)
 		}
 	}
 
@@ -122,6 +141,16 @@ extension NamesListViewController: AddPersonDelegate {
 		self.loadTableData()
 		
 		appendPeople()
+	}
+}
+
+extension NamesListViewController: UIViewControllerTransitioningDelegate {
+	func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
+		if let addNameModalViewController = self.addNameModalViewController {
+			return ModalPresentationController(presentedViewController: addNameModalViewController, presenting: self)
+		}
+		
+		return nil
 	}
 }
 

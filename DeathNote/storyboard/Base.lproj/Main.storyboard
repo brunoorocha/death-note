@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cEu-75-i8J">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cEu-75-i8J">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,12 +15,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="NamesListViewController" customModule="DeathNote" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="551"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="H5x-ld-YvG">
-                                <rect key="frame" x="40" y="0.0" width="335" height="551"/>
-
+                                <rect key="frame" x="40" y="116" width="335" height="551"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
@@ -36,7 +35,7 @@
                     <navigationItem key="navigationItem" title="Dear Ryuky, " id="72F-JL-yoO">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="sJT-Zz-u1D">
                             <connections>
-                                <segue destination="FVz-nD-BDW" kind="presentation" identifier="AddNameModal" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="LvU-gi-27F"/>
+                                <segue destination="FVz-nD-BDW" kind="presentation" identifier="AddNameModal" modalPresentationStyle="overFullScreen" id="LvU-gi-27F"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -48,7 +47,6 @@
             </objects>
             <point key="canvasLocation" x="762" y="-564"/>
         </scene>
-
         <!--Add Name Modal View Controller-->
         <scene sceneID="nSL-qo-KFs">
             <objects>
@@ -57,9 +55,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cfT-hv-vtO">
-                                <rect key="frame" x="0.0" y="112" width="375" height="555"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <subviews>
                                     <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jN8-NJ-5bG">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -84,45 +81,38 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1ra-C0-1oz">
                                         <rect key="frame" x="16" y="105" width="343" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Death Issue" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NKI-wE-fLY">
                                         <rect key="frame" x="16" y="167" width="343" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UAB-CE-IQD">
                                         <rect key="frame" x="16" y="196" width="343" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time of death" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fpv-81-bAx">
                                         <rect key="frame" x="16" y="258" width="343" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uBk-tU-LR1">
                                         <rect key="frame" x="16" y="287" width="343" height="30"/>
-
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="1ra-C0-1oz" secondAttribute="trailing" constant="16" id="15M-xu-fe8"/>
                                     <constraint firstAttribute="trailing" secondItem="aPX-Jh-KHx" secondAttribute="trailing" constant="16" id="52K-9l-rEz"/>
@@ -152,17 +142,20 @@
                         <constraints>
                             <constraint firstItem="cfT-hv-vtO" firstAttribute="leading" secondItem="AuS-3y-3Df" secondAttribute="leading" id="2MC-ai-6JL"/>
                             <constraint firstItem="cfT-hv-vtO" firstAttribute="bottom" secondItem="AuS-3y-3Df" secondAttribute="bottom" id="Hvh-6F-Jhg"/>
-                            <constraint firstItem="cfT-hv-vtO" firstAttribute="top" secondItem="AuS-3y-3Df" secondAttribute="top" constant="92" id="TGQ-E0-arB"/>
+                            <constraint firstItem="cfT-hv-vtO" firstAttribute="top" secondItem="AuS-3y-3Df" secondAttribute="top" id="TGQ-E0-arB"/>
                             <constraint firstItem="cfT-hv-vtO" firstAttribute="trailing" secondItem="AuS-3y-3Df" secondAttribute="trailing" id="mZA-na-17S"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="AuS-3y-3Df"/>
                     </view>
                     <connections>
+                        <outlet property="cancelButton" destination="BrR-Yf-ov7" id="0ZO-qy-l5j"/>
                         <outlet property="deathIssueTextField" destination="UAB-CE-IQD" id="MEd-9P-J2y"/>
+                        <outlet property="modalView" destination="cfT-hv-vtO" id="QwA-vJ-pEE"/>
                         <outlet property="nameTextField" destination="1ra-C0-1oz" id="T4p-As-jsG"/>
+                        <outlet property="navigationBar" destination="jN8-NJ-5bG" id="Sv2-30-Aee"/>
+                        <outlet property="saveButton" destination="lAB-zu-6sv" id="vdg-PX-bCe"/>
                         <outlet property="timeOfDeathTextField" destination="uBk-tU-LR1" id="uFW-nS-cWT"/>
                     </connections>
-
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gy3-Xu-Tzw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -173,9 +166,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cEu-75-i8J" sceneMemberID="viewController">
                     <toolbarItems/>
-
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="gWc-ue-8du">
-
                         <rect key="frame" x="0.0" y="20" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
