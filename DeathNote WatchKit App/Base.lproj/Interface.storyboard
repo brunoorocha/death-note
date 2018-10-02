@@ -1,16 +1,70 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14113" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11055"/>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14033"/>
     </dependencies>
     <scenes>
-        <!--Interface Controller-->
+        <!--Names List Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModuleProvider="target"/>
+                <controller id="AgC-eL-Hgc" customClass="NamesListInterfaceController" customModule="DeathNote_WatchKit_Extension">
+                    <items>
+                        <group width="136" height="28" alignment="left" id="XA5-1K-U6R">
+                            <items>
+                                <label width="96" height="24" alignment="left" text="Today" id="1HG-fl-T6T">
+                                    <fontDescription key="font" type="system" weight="semibold" pointSize="20"/>
+                                </label>
+                                <imageView width="24" height="24" alignment="right" id="KCO-tO-H9H"/>
+                            </items>
+                        </group>
+                        <table alignment="center" id="tGz-QE-7Or">
+                            <items>
+                                <tableRow identifier="NameListTableRow" id="rx4-6I-1Q6" customClass="RowController" customModule="DeathNote_WatchKit_Extension">
+                                    <group key="rootItem" width="1" alignment="left" id="ypf-M0-Sli">
+                                        <items>
+                                            <label alignment="left" verticalAlignment="center" text="Name" id="DX1-xL-44b">
+                                                <fontDescription key="font" type="system" weight="semibold" pointSize="16"/>
+                                            </label>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="nameLabel" destination="DX1-xL-44b" id="hLJ-IW-C53"/>
+                                        <segue destination="eai-9Z-xeF" kind="push" identifier="NameListToProgressStatus" id="CZz-oB-4ms"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="namesListTable" destination="tGz-QE-7Or" id="FoO-FK-x77"/>
+                        <outlet property="testImage" destination="KCO-tO-H9H" id="yU1-Pd-INl"/>
+                    </connections>
+                </controller>
             </objects>
             <point key="canvasLocation" x="220" y="345"/>
+        </scene>
+        <!--Progress Status Interface Controller-->
+        <scene sceneID="nxN-HR-dyx">
+            <objects>
+                <controller id="eai-9Z-xeF" customClass="ProgressStatusInterfaceController" customModule="DeathNote_WatchKit_Extension">
+                    <items>
+                        <imageView height="127" alignment="left" id="ZI1-yU-g7U"/>
+                        <label alignment="center" verticalAlignment="bottom" text="Name" id="wbm-fP-E3O">
+                            <fontDescription key="font" type="system" weight="semibold" pointSize="16"/>
+                        </label>
+                    </items>
+                    <connections>
+                        <outlet property="circleProgressBarImage" destination="ZI1-yU-g7U" id="grv-aI-Flg"/>
+                        <outlet property="nameLabel" destination="wbm-fP-E3O" id="3Jy-Mt-qhB"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="468" y="345"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">
@@ -31,7 +85,7 @@
         <!--Notification Controller-->
         <scene sceneID="ZPc-GJ-vnh">
             <objects>
-                <controller id="4sK-HA-Art" customClass="NotificationController" customModuleProvider="target"/>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="DeathNote_WatchKit_App" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="468" y="643"/>
         </scene>

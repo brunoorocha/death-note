@@ -16,7 +16,6 @@
 		BE22B910215CF31900B79A40 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE22B90E215CF31900B79A40 /* Interface.storyboard */; };
 		BE22B912215CF31900B79A40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE22B911215CF31900B79A40 /* Assets.xcassets */; };
 		BE22B919215CF31900B79A40 /* DeathNote WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = BE22B918215CF31900B79A40 /* DeathNote WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		BE22B91E215CF31900B79A40 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE22B91D215CF31900B79A40 /* InterfaceController.swift */; };
 		BE22B920215CF31900B79A40 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE22B91F215CF31900B79A40 /* ExtensionDelegate.swift */; };
 		BE22B922215CF31900B79A40 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE22B921215CF31900B79A40 /* NotificationController.swift */; };
 		BE22B924215CF31A00B79A40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE22B923215CF31A00B79A40 /* Assets.xcassets */; };
@@ -27,6 +26,11 @@
 		BE22B943215D042800B79A40 /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE22B942215D042800B79A40 /* DateUtils.swift */; };
 		BE22B945215D101400B79A40 /* DateTableViewHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE22B944215D101400B79A40 /* DateTableViewHeaderView.swift */; };
 		BE22B947215D102800B79A40 /* DateTableViewHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE22B946215D102800B79A40 /* DateTableViewHeaderView.xib */; };
+		BE413BB4216244B7005AE2D7 /* NamesListInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE413BB3216244B7005AE2D7 /* NamesListInterfaceController.swift */; };
+		BE413BB6216244FA005AE2D7 /* ProgressStatusInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE413BB5216244FA005AE2D7 /* ProgressStatusInterfaceController.swift */; };
+		BE413BB8216249A8005AE2D7 /* RowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE413BB7216249A8005AE2D7 /* RowController.swift */; };
+		BE413BB921625F79005AE2D7 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE22B937215CF91D00B79A40 /* Person.swift */; };
+		BE413BBA21625F83005AE2D7 /* DeathType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE22B939215CF99800B79A40 /* DeathType.swift */; };
 		BE4B8438215D239D00DD2AA9 /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4B8437215D239D00DD2AA9 /* AppTheme.swift */; };
 
 		BEC952E0216246ED001CBC5C /* AddNameModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC952DF216246ED001CBC5C /* AddNameModalViewController.swift */; };
@@ -89,7 +93,6 @@
 		BE22B911215CF31900B79A40 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BE22B913215CF31900B79A40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE22B918215CF31900B79A40 /* DeathNote WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "DeathNote WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		BE22B91D215CF31900B79A40 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
 		BE22B91F215CF31900B79A40 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		BE22B921215CF31900B79A40 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		BE22B923215CF31A00B79A40 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -102,6 +105,9 @@
 		BE22B942215D042800B79A40 /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
 		BE22B944215D101400B79A40 /* DateTableViewHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTableViewHeaderView.swift; sourceTree = "<group>"; };
 		BE22B946215D102800B79A40 /* DateTableViewHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DateTableViewHeaderView.xib; sourceTree = "<group>"; };
+		BE413BB3216244B7005AE2D7 /* NamesListInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamesListInterfaceController.swift; sourceTree = "<group>"; };
+		BE413BB5216244FA005AE2D7 /* ProgressStatusInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressStatusInterfaceController.swift; sourceTree = "<group>"; };
+		BE413BB7216249A8005AE2D7 /* RowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowController.swift; sourceTree = "<group>"; };
 		BE4B8437215D239D00DD2AA9 /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
 
 		BEC952DF216246ED001CBC5C /* AddNameModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNameModalViewController.swift; sourceTree = "<group>"; };
@@ -175,7 +181,9 @@
 		BE22B91C215CF31900B79A40 /* DeathNote WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
-				BE22B91D215CF31900B79A40 /* InterfaceController.swift */,
+				BE413BB3216244B7005AE2D7 /* NamesListInterfaceController.swift */,
+				BE413BB5216244FA005AE2D7 /* ProgressStatusInterfaceController.swift */,
+				BE413BB7216249A8005AE2D7 /* RowController.swift */,
 				BE22B91F215CF31900B79A40 /* ExtensionDelegate.swift */,
 				BE22B921215CF31900B79A40 /* NotificationController.swift */,
 				BE22B923215CF31A00B79A40 /* Assets.xcassets */,
@@ -392,9 +400,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE413BB921625F79005AE2D7 /* Person.swift in Sources */,
+				BE413BB8216249A8005AE2D7 /* RowController.swift in Sources */,
+				BE413BB6216244FA005AE2D7 /* ProgressStatusInterfaceController.swift in Sources */,
 				BE22B922215CF31900B79A40 /* NotificationController.swift in Sources */,
 				BE22B920215CF31900B79A40 /* ExtensionDelegate.swift in Sources */,
-				BE22B91E215CF31900B79A40 /* InterfaceController.swift in Sources */,
+				BE413BB4216244B7005AE2D7 /* NamesListInterfaceController.swift in Sources */,
+				BE413BBA21625F83005AE2D7 /* DeathType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
