@@ -10,7 +10,8 @@ import UIKit
 
 class NamesListViewController: UIViewController {
 
-	@IBOutlet weak var tableView: UITableView!	
+	@IBOutlet weak var tableView: UITableView!
+    
 	
 	var persons: [Person] = [
 		 Person(name: "Joãozim", deathType: .heartAttack, deathDay: Date.init(), deathHour: Date(timeInterval: 40.0, since: Date.init())),
@@ -21,23 +22,37 @@ class NamesListViewController: UIViewController {
 	var tableData: [String: [Person]] = [:]
 	
 	var dates: [String] = []
+    
+    let textColor = AppColors.currentTheme.colors.textColor
+    let background = AppColors.currentTheme.colors.backgroundColor
+    let primaryColor = AppColors.currentTheme.colors.primaryColor
+    
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
 		self.tableView.delegate = self
 		self.tableView.dataSource = self
+        
+        tableView.backgroundColor = background
 		
 		self.tableView.register(UINib(nibName: "NamesListTableViewCell", bundle: nil), forCellReuseIdentifier: "NamesListTableViewCell")
 		self.tableView.register(UINib(nibName: "DateTableViewHeaderView", bundle: nil), forHeaderFooterViewReuseIdentifier: "DateTableViewHeaderView")
 		
+        
+        
+		self.view.backgroundColor = background
+        navigationController?.navigationBar.tintColor = primaryColor
+        navigationController?.navigationBar.barTintColor = background
+        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedStringKey.font: UIFont(name: "Futura", size: 24)!]
+
 		loadTableData()
 	}
 	
 	func loadTableData() {
 		self.dates = []
 		for person in self.persons {
-			let date = getYearMonthAndDay(from: person.deathDay)
+			let date = formatterToLongStyle(with: person.deathDay)
 			
 			if !self.dates.contains(date) {
 				self.dates.append(date)
@@ -48,7 +63,7 @@ class NamesListViewController: UIViewController {
 		
 		for date in self.dates {
 			self.tableData[date] = self.persons.filter({ (person) -> Bool in
-				return date == getYearMonthAndDay(from: person.deathDay)
+				return date == formatterToLongStyle(with: person.deathDay)
 			})
 		}
 		
@@ -127,6 +142,7 @@ extension NamesListViewController: UITableViewDelegate, UITableViewDataSource {
 			
 			cell.nameLabel.text = persons[indexPath.item].name
 			cell.deathHourLabel.text = getHoursMinutesAndSeconds(from: persons[indexPath.item].deathHour)
+            cell.selectionStyle = .none
 			
 			return cell
 		}
